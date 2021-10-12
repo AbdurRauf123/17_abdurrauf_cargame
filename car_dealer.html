@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rauf Sells Your Cars</title>
+<link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="dealer.css" type="text/css" />
+<link rel="stylesheet" href="styles/jquery.fancybox.css" type="text/css" />
+<script type="text/javascript" language="javascript" src="scripts/jquery.min.js"></script> 
+<script type="text/javascript" language="javascript" src="scripts/jquery-ui.min.js"></script> 
+<script type="text/javascript" language="javascript" src="scripts/bootstrap.min.js"></script> 
+<script type="text/javascript" language="javascript" src="scripts/jquery.fancybox.js"></script> 
+<script type="text/javascript" language="javascript" src="dealer.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="#">RSYC Car Dealer</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+                                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"> <a class="nav-link" href="#" onClick="showPage('splash')">Play</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="#" onClick="showPage('about')">About</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="#" onClick="showPage('credits')">Credits</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="#" onClick="showPage('help')">Help</a> </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Play page -->	
+<div id="app">
+  <div id="splash" class="page-panel">
+	<div> 
+		<img src="images/logo.png" alt="logo" id="logo"/> 
+	</div>
+	<div onClick="showPage('play')"> 
+		<audio id="audio" src="audios/buttonsound.mp3" autoplay="false" ></audio>
+		<img src="images/startbtn.png" alt="Start Game" onclick="playSound()" class="game-button">
+	</div> 		
+  </div>
+	
+<!-- After start button is clicked -->	
+  <div id="play" class="page-panel">
+    <div id="salon">
+      <div id="clients_queue"> clients queue </div>
+      <div id="cars_place">
+        <div id="porsche" class="place">
+          <h4>Porsche</h4>
+          <div class="car"> <img src="images/Porsche_1.jpg"> </div>
+          <div class="car"> <img src="images/Porsche_1.jpg"> </div>
+          <div class="car"> <img src="images/Porsche_1.jpg"> </div>
+          <div class="car"> <img src="images/Porsche_1.jpg"> </div>
+        </div>
+        <div id="volkswagen" class="place">
+          <h4>Volkswagen</h4>
+          <div class="car"> <img src="images/Volkswagen_1.jpg"> </div>
+          <div class="car"> <img src="images/Volkswagen_1.jpg"> </div>
+          <div class="car"> <img src="images/Volkswagen_1.jpg"> </div>
+          <div class="car"> <img src="images/Volkswagen_1.jpg"> </div>
+        </div>
+        <div id="audi" class="place">
+          <h4>Audi</h4>
+          <div class="car"> <img src="images/Audi_1.jpg"> </div>
+          <div class="car"> <img src="images/Audi_1.jpg"> </div>
+          <div class="car"> <img src="images/Audi_1.jpg"> </div>
+          <div class="car"> <img src="images/Audi_1.jpg"> </div>
+        </div>
+        <div id="bmw" class="place">
+          <h4>BMW</h4>
+          <div class="car"> <img src="images/BMW_1.jpg"> </div>
+          <div class="car"> <img src="images/BMW_1.jpg"> </div>
+          <div class="car"> <img src="images/BMW_1.jpg"> </div>
+          <div class="car"> <img src="images/BMW_1.jpg"> </div>
+        </div>
+      </div>
+      <div id="cashier">
+        <h4>cashier</h4>
+        <div id="cashier_img_holder"><img src="images/cashier.jpg"></div>
+      </div>
+      <div id="exit">
+        <h4>exit</h4>
+        <div id="exit_img_holder"><img src="images/exit.gif"></div>
+      </div>
+      <div id="display">
+        <ul>
+          <li id="clients_served">0 clients</li>
+          <li id="cars_sold">0 cars</li>
+          <li id="amount">$ 0</li>
+        </ul>
+      </div>
+    </div>
+    <div id="dialog" style="display:none">
+      <p>Do you want to make payment?</p>
+    </div>
+  </div>
+	
+<!-- About page -->	
+  <div id="about" class="page-panel">
+	<div class="container">
+		<div class="row" style="margin-top: 30px">
+			<div class="col-sm">
+				<img src="images/logo.png" alt="RSYC" width="80%"/>
+			</div>
+			<div class="col-sm" style="text-align: left">
+				<h2>What is RSYC?</h2>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>
+		</div>
+		<div style="margin-top: 80px; margin-bottom: 20px;">
+	  			<h1>What our clients have to say</h1>
+	  		</div>
+			<div class="card-deck" style="width: 80rem;">
+			  <div class="card">
+				<img class="card-img-top img-thumbnail" src="images/Ninja.png" alt="Card image cap">
+				<div class="card-body">
+				  <h5 class="card-title">Twitch streamer, Ninja</h5>
+				  <p class="card-text">One time, I almost died from streaming 20 days in a row but thanks to RSYC Car Dealer 25/8 customer service. I managed to reach the Hospital on time.</p>
+				</div>
+				<div class="card-footer">
+				  <small class="text-muted">Last updated 3 mins ago</small>
+				</div>
+			  </div>
+			  <div class="card">
+				<img class="card-img-top img-thumbnail" src="images/Ricardo.jpg" alt="Card image cap">
+				<div class="card-body">
+				  <h5 class="card-title">Dance Instructor, Ricardo Milos</h5>
+				  <p class="card-text">OMG! RSYC! RSYC! It's car quality is SO GOOD! I was able to drive to different dance studio locations with NO ISSUES. OBRIGADO RSYC!.</p>
+				</div>
+				<div class="card-footer">
+				  <small class="text-muted">Last updated 4 hours ago</small>
+				</div>
+			  </div>
+			  <div class="card">
+				<img class="card-img-top img-thumbnail" src="images/Phil_Swift.jpg" alt="Card image cap">
+				<div class="card-body">
+				  <h5 class="card-title">Teacher, Phil Swift</h5>
+				  <p class="card-text">Thanks to Rauf Sells Your Cars, I was able to buy a car to drive to another dealership faster.</p>
+				</div>
+				<div class="card-footer">
+				  <small class="text-muted">Last updated 9 hours ago</small>
+				</div>
+			  </div>
+			</div>
+	  	<br><br>
+	</div>
+  </div>
+	
+<!-- Credits page -->	
+  <div id="credits" class="page-panel"> Credits Page </div>
+
+<!-- Help page aka Instruction page -->
+  <div id="help" class="page-panel"> Help Page </div>
+</div>
+	<script>
+    function playSound() {
+          var sound = document.getElementById("audio");
+		  sound.volume = 0.05;
+          sound.play();
+      }
+    </script>
+</body>
+</html>
