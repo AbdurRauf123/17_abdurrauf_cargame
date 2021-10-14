@@ -103,7 +103,8 @@
 			</div>
 			<div class="col-sm" style="text-align: left">
 				<h2>What is RSYC?</h2>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				<p>RSYC is a Car Show Room Application to simulate and manage the sale of cars in a store. How the application works is when a customer arrive at the store are presented in a queue and the queue can only receive a maximum of 10 customers at any one time. Only the first customer in queue can be move, the others must wait for their turn. The application allows the first customer in the queue to be moved to a car according to their preference (Porsche, Volkswagen, Audi or BMW). When the first customer in the queue is moved to a car, a new customer can enter the queue.
+				</p>
 			</div>
 		</div>
 		<div style="margin-top: 80px; margin-bottom: 20px;">
@@ -150,6 +151,47 @@
 
 <!-- Help page aka Instruction page -->
   <div id="help" class="page-panel"> Help Page </div>
+	
+<!-- MCQ section -->	
+  <div id="mcq" style="display: none">
+  	<div id="question-panel">
+		<div class="row">
+			<div class="col-12">
+				<span id="questionTitle"></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<div class="mcq-choice" id="optionA" onClick="ansBox_click('a')">Answer A</div>
+			</div>
+			<div class="col-6">
+				<div class="mcq-choice" id="optionB" onClick="ansBox_click('b')">Answer B</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<div class="mcq-choice" id="optionC" onClick="ansBox_click('c')">Answer C</div>
+			</div>
+			<div class="col-6">
+				<div class="mcq-choice" id="optionD" onClick="ansBox_click('d')">Answer D</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<a onclick="next_qns()">
+					<img src="images/next.png" width="100px" height="50px" alt="next"/>
+				</a>
+			</div>
+		</div>
+	</div>
+	  <div id="result-panel" style="display: none">
+	  	<div id="myresult"></div>
+		<div id="totalScore"></div>
+		<div>
+			<input type="button" id="closeResultButton" value="Close">  
+		</div>
+	  </div>
+  </div>
 </div>
 	<script>
     function playSound() {
