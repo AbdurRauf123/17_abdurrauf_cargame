@@ -7,97 +7,97 @@ var brandcost = new Array(72500, 23930, 31260, 43990);
 
 var questions = [
 	{
-	"qns":"___ you happy today? Porsche",
+	"qns":"P_rsche",
 	"no" : "1",
-	"correctAns": "c",
+	"correctAns": "b",
 	"points" : "2",
 	"category" : "Porsche",
 	"choices" : [{
-		  "title": "at",
+		  "title": "a",
 		  "no" : "a" 
 		},
 		{
-		   "title": "was",
+		   "title": "o",
 		   "no" : "b" 
 		},
 		{
-		    "title": "are",
+		    "title": "s",
 		    "no" : "c" 
 		},
 		{
-		     "title": "were",
+		     "title": "e",
 		     "no" : "d" 
 		}],
 	},
 	
 	{
-	"qns":"Will you come ___ class tomorrow? Volkswagen",
+	"qns":"Volks_agen",
 	"no" : "1",
-	"correctAns": "d",
+	"correctAns": "a",
 	"points" : "2",
 	"category" : "Volkswagen",
 	"choices" : [{
-		  "title": "was",
+		  "title": "w",
 		  "no" : "a" 
 		},
 		{
-		   "title": "in",
+		   "title": "a",
 		   "no" : "b" 
 		},
 		{
-		    "title": "at",
+		    "title": "m",
 		    "no" : "c" 
 		},
 		{
-		     "title": "to",
+		     "title": "v",
 		     "no" : "d" 
 		}]
 	},
 	
 	{
-	"qns":"Where ___ you from? Audi",
+	"qns":"Au_i",
 	"no" : "1",
-	"correctAns": "c",
+	"correctAns": "d",
 	"points" : "2",
 	"category" : "Audi",
 	"choices" : [{
-		  "title": "to",
+		  "title": "p",
 		  "no" : "a" 
 		},
 		{
-		   "title": "at",
+		   "title": "b",
 		   "no" : "b" 
 		},
 		{
-		    "title": "are",
+		    "title": "a",
 		    "no" : "c" 
 		},
 		{
-		     "title": "were",
+		     "title": "d",
 		     "no" : "d" 
 		}]
 	},
 	
 	{
-	"qns":"Will you ___ later? BMW",
+	"qns":"BMW is a ___ company",
 	"no" : "1",
 	"correctAns": "b",
 	"points" : "2",
 	"category" : "BMW",
 	"choices" : [{
-		  "title": "ate",
+		  "title": "game",
 		  "no" : "a" 
 		},
 		{
-		   "title": "eat",
+		   "title": "car",
 		   "no" : "b" 
 		},
 		{
-		    "title": "eaten",
+		    "title": "food",
 		    "no" : "c" 
 		},
 		{
-		     "title": "eating",
+		     "title": "furniture",
 		     "no" : "d" 
 		}]
 	},
