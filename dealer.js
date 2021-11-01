@@ -7,10 +7,11 @@ var brandcost = new Array(72500, 23930, 31260, 43990);
 
 var questions = [
 	{
-	"qns":"___ you happy today?",
+	"qns":"___ you happy today? Porsche",
 	"no" : "1",
 	"correctAns": "c",
 	"points" : "2",
+	"category" : "Porsche",
 	"choices" : [{
 		  "title": "at",
 		  "no" : "a" 
@@ -30,10 +31,11 @@ var questions = [
 	},
 	
 	{
-	"qns":"Will you come ___ class tomorrow?",
-	"no" : "2",
+	"qns":"Will you come ___ class tomorrow? Volkswagen",
+	"no" : "1",
 	"correctAns": "d",
 	"points" : "2",
+	"category" : "Volkswagen",
 	"choices" : [{
 		  "title": "was",
 		  "no" : "a" 
@@ -53,10 +55,11 @@ var questions = [
 	},
 	
 	{
-	"qns":"Where ___ you from?",
-	"no" : "3",
+	"qns":"Where ___ you from? Audi",
+	"no" : "1",
 	"correctAns": "c",
 	"points" : "2",
+	"category" : "Audi",
 	"choices" : [{
 		  "title": "to",
 		  "no" : "a" 
@@ -71,6 +74,30 @@ var questions = [
 		},
 		{
 		     "title": "were",
+		     "no" : "d" 
+		}]
+	},
+	
+	{
+	"qns":"Will you ___ later? BMW",
+	"no" : "1",
+	"correctAns": "b",
+	"points" : "2",
+	"category" : "BMW",
+	"choices" : [{
+		  "title": "ate",
+		  "no" : "a" 
+		},
+		{
+		   "title": "eat",
+		   "no" : "b" 
+		},
+		{
+		    "title": "eaten",
+		    "no" : "c" 
+		},
+		{
+		     "title": "eating",
 		     "no" : "d" 
 		}]
 	},
@@ -132,7 +159,7 @@ function makeCarBoxesDroppable(brand) {
 						count--;
 						$dragBox.addClass('selected');
 						currentClient = $dragBox;
-						next_qns();
+						next_qns(brand);
 						var dialogOption = { scrolling: 'no' };
 						$.fancybox.open('#mcq',dialogOption);
 					}
@@ -288,9 +315,16 @@ function hideAllPages() {
 			   });
 }
 
-function next_qns() {
-	if(qnsIndex < questions.length) {
-		var current = questions[qnsIndex];
+function next_qns(category) {
+	var filteredQns = [];
+	for(var i=0;i<questions.length;i++) {
+		var question = questions[i];
+		if(question.category==category) {
+			filteredQns.push(question);
+		}
+	}
+	if(qnsIndex < filteredQns.length) {
+		var current = filteredQns[qnsIndex];
 		var questionTitle = $("#questionTitle");
 		questionTitle.html((qnsIndex+1) + ". " + current.qns);
 
