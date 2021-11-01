@@ -3,9 +3,9 @@ html, body {width:100%; height:100%; font-family:Arial, Helvetica, sans-serif; f
 
 #salon{
     width:800px;
-    height:605px;
-    border:5px solid;
-    border-color:#f49f1c;
+    height:650px;
+    border:10px solid;
+    border-color:#CCC;
     margin:0 auto; 
     margin-top:50px;
 }
@@ -73,7 +73,7 @@ html, body {width:100%; height:100%; font-family:Arial, Helvetica, sans-serif; f
 .place{
     position: absolute;
     width: 400px;
-    height: 146px;
+    height: 140px;
     border:1px solid;
 }
 #volkswagen{
@@ -83,7 +83,7 @@ html, body {width:100%; height:100%; font-family:Arial, Helvetica, sans-serif; f
     margin-top:300px;
 }
 #bmw{
-    margin-top:450px;
+    margin-top:460px;
 }
 .client_1{background-image:url(images/client_1.jpg);}
 .client_2{background-image:url(images/client_2.jpg);}
@@ -114,14 +114,6 @@ html, body {width:100%; height:100%; font-family:Arial, Helvetica, sans-serif; f
     position: relative;
 }
 
-.carLogo img {
-	width: 55px;
-    height: 50px;
-    position: relative;
-    top: 0px;
-    left: 0px;
-}
-
 #exit img {
 	width: 140px;
 	position: absolute;
@@ -141,7 +133,7 @@ html, body {width:100%; height:100%; font-family:Arial, Helvetica, sans-serif; f
 }
 
 .bg-light {
-    background-color: #210070 !important;
+    background-color: darkred !important;
 }
 
 .navbar-light .navbar-brand {
@@ -169,7 +161,7 @@ html, body {width:100%; height:100%; font-family:Arial, Helvetica, sans-serif; f
 	margin-top: 100px;
 	margin-left: auto;
 	margin-right: auto;
-	border: 4px solid #f49f1c;
+	border: 2px solid darkred;
 }
 
 .game-button {

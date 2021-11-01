@@ -7,103 +7,76 @@ var brandcost = new Array(72500, 23930, 31260, 43990);
 
 var questions = [
 	{
-	"qns":"P_rsche",
+	"qns":"___ you happy today?",
 	"no" : "1",
-	"correctAns": "a",
+	"correctAns": "c",
 	"points" : "2",
-	"category" : "Porsche",
 	"choices" : [{
-		  "title": "o",
+		  "title": "at",
 		  "no" : "a" 
 		},
 		{
-		   "title": "a",
+		   "title": "was",
 		   "no" : "b" 
 		},
 		{
-		    "title": "s",
+		    "title": "are",
 		    "no" : "c" 
 		},
 		{
-		     "title": "e",
+		     "title": "were",
 		     "no" : "d" 
 		}],
 	},
 	
 	{
-	"qns":"Volks_agen",
-	"no" : "1",
+	"qns":"Will you come ___ class tomorrow?",
+	"no" : "2",
 	"correctAns": "d",
 	"points" : "2",
-	"category" : "Volkswagen",
 	"choices" : [{
-		  "title": "v",
+		  "title": "was",
 		  "no" : "a" 
 		},
 		{
-		   "title": "a",
+		   "title": "in",
 		   "no" : "b" 
 		},
 		{
-		    "title": "m",
+		    "title": "at",
 		    "no" : "c" 
 		},
 		{
-		     "title": "w",
+		     "title": "to",
 		     "no" : "d" 
 		}]
 	},
 	
 	{
-	"qns":"Au_i",
-	"no" : "1",
-	"correctAns": "d",
+	"qns":"Where ___ you from?",
+	"no" : "3",
+	"correctAns": "c",
 	"points" : "2",
-	"category" : "Audi",
 	"choices" : [{
-		  "title": "p",
+		  "title": "to",
 		  "no" : "a" 
 		},
 		{
-		   "title": "b",
+		   "title": "at",
 		   "no" : "b" 
 		},
 		{
-		    "title": "a",
+		    "title": "are",
 		    "no" : "c" 
 		},
 		{
-		     "title": "d",
-		     "no" : "d" 
-		}]
-	},
-	
-	{
-	"qns":"BMW is a ___ company",
-	"no" : "1",
-	"correctAns": "b",
-	"points" : "2",
-	"category" : "BMW",
-	"choices" : [{
-		  "title": "game",
-		  "no" : "a" 
-		},
-		{
-		   "title": "car",
-		   "no" : "b" 
-		},
-		{
-		    "title": "food",
-		    "no" : "c" 
-		},
-		{
-		     "title": "furniture",
+		     "title": "were",
 		     "no" : "d" 
 		}]
 	},
 ]
 				
-var 	qnsIndex = 0;
+var qnsIndex = 0;
 var selections = [];
 var currentClient = null;
 
@@ -159,7 +132,7 @@ function makeCarBoxesDroppable(brand) {
 						count--;
 						$dragBox.addClass('selected');
 						currentClient = $dragBox;
-						next_qns(brand);
+						next_qns();
 						var dialogOption = { scrolling: 'no' };
 						$.fancybox.open('#mcq',dialogOption);
 					}
@@ -315,16 +288,9 @@ function hideAllPages() {
 			   });
 }
 
-function next_qns(category) {
-	var filteredQns = [];
-	for(var i=0;i<questions.length;i++) {
-		var question = questions[i];
-		if(question.category==category) {
-			filteredQns.push(question);
-		}
-	}
-	if(qnsIndex < filteredQns.length) {
-		var current = filteredQns[qnsIndex];
+function next_qns() {
+	if(qnsIndex < questions.length) {
+		var current = questions[qnsIndex];
 		var questionTitle = $("#questionTitle");
 		questionTitle.html((qnsIndex+1) + ". " + current.qns);
 
