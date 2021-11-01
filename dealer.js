@@ -9,15 +9,15 @@ var questions = [
 	{
 	"qns":"P_rsche",
 	"no" : "1",
-	"correctAns": "b",
+	"correctAns": "a",
 	"points" : "2",
 	"category" : "Porsche",
 	"choices" : [{
-		  "title": "a",
+		  "title": "o",
 		  "no" : "a" 
 		},
 		{
-		   "title": "o",
+		   "title": "a",
 		   "no" : "b" 
 		},
 		{
@@ -33,11 +33,11 @@ var questions = [
 	{
 	"qns":"Volks_agen",
 	"no" : "1",
-	"correctAns": "a",
+	"correctAns": "d",
 	"points" : "2",
 	"category" : "Volkswagen",
 	"choices" : [{
-		  "title": "w",
+		  "title": "v",
 		  "no" : "a" 
 		},
 		{
@@ -49,7 +49,7 @@ var questions = [
 		    "no" : "c" 
 		},
 		{
-		     "title": "v",
+		     "title": "w",
 		     "no" : "d" 
 		}]
 	},
@@ -103,7 +103,7 @@ var questions = [
 	},
 ]
 				
-var qnsIndex = 0;
+var 	qnsIndex = 0;
 var selections = [];
 var currentClient = null;
 
