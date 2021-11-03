@@ -4,73 +4,293 @@ var clients_served = 0;
 var cars_sold = 0;
 var amount = 0;
 var brandcost = new Array(72500, 23930, 31260, 43990);
+var selectedCategory = "";
 
 var questions = [
 	{
-	"qns":"___ you happy today?",
+	"qns":"What does Porsche mean?",
 	"no" : "1",
 	"correctAns": "c",
 	"points" : "2",
+	"category" : "Porsche",
 	"choices" : [{
-		  "title": "at",
+		  "title": "Worthy",
 		  "no" : "a" 
 		},
 		{
-		   "title": "was",
+		   "title": "Friends",
 		   "no" : "b" 
 		},
 		{
-		    "title": "are",
+		    "title": "Offerings",
 		    "no" : "c" 
 		},
 		{
-		     "title": "were",
+		     "title": "Car",
 		     "no" : "d" 
 		}],
 	},
 	
 	{
-	"qns":"Will you come ___ class tomorrow?",
+	"qns":"What do Porsche sell?",
 	"no" : "2",
 	"correctAns": "d",
 	"points" : "2",
+	"category" : "Porsche",
 	"choices" : [{
-		  "title": "was",
+		  "title": "Bikes",
 		  "no" : "a" 
 		},
 		{
-		   "title": "in",
+		   "title": "Watches",
 		   "no" : "b" 
 		},
 		{
-		    "title": "at",
+		    "title": "Clothings",
 		    "no" : "c" 
 		},
 		{
-		     "title": "to",
+		     "title": "Cars",
+		     "no" : "d" 
+		}],
+	},
+	
+	{
+	"qns":"How would you rate our business?",
+	"no" : "3",
+	"correctAns": "a",
+	"points" : "2",
+	"category" : "Porsche",
+	"choices" : [{
+		  "title": "10",
+		  "no" : "a" 
+		},
+		{
+		   "title": "5",
+		   "no" : "b" 
+		},
+		{
+		    "title": "9",
+		    "no" : "c" 
+		},
+		{
+		     "title": "1",
+		     "no" : "d" 
+		}],
+	},
+	
+	{
+	"qns":"What was Volkswagen originally called?",
+	"no" : "1",
+	"correctAns": "d",
+	"points" : "2",
+	"category" : "Volkswagen",
+	"choices" : [{
+		  "title": "Swag",
+		  "no" : "a" 
+		},
+		{
+		   "title": "Swagen",
+		   "no" : "b" 
+		},
+		{
+		    "title": "Volk",
+		    "no" : "c" 
+		},
+		{
+		     "title": "Volkswagenwerk",
 		     "no" : "d" 
 		}]
 	},
 	
 	{
-	"qns":"Where ___ you from?",
-	"no" : "3",
-	"correctAns": "c",
+	"qns":"When was Volkswagen founded?",
+	"no" : "2",
+	"correctAns": "a",
 	"points" : "2",
+	"category" : "Volkswagen",
 	"choices" : [{
-		  "title": "to",
+		  "title": "1937",
 		  "no" : "a" 
 		},
 		{
-		   "title": "at",
+		   "title": "2021",
 		   "no" : "b" 
 		},
 		{
-		    "title": "are",
+		    "title": "2000",
 		    "no" : "c" 
 		},
 		{
-		     "title": "were",
+		     "title": "1969",
+		     "no" : "d" 
+		}]
+	},
+	
+	{
+	"qns":"Where was Volkswagen originated?",
+	"no" : "3",
+	"correctAns": "c",
+	"points" : "2",
+	"category" : "Volkswagen",
+	"choices" : [{
+		  "title": "Singapore",
+		  "no" : "a" 
+		},
+		{
+		   "title": "USA",
+		   "no" : "b" 
+		},
+		{
+		    "title": "Germany",
+		    "no" : "c" 
+		},
+		{
+		     "title": "India",
+		     "no" : "d" 
+		}]
+	},
+	
+	{
+	"qns":"Who invented Audi?",
+	"no" : "1",
+	"correctAns": "c",
+	"points" : "2",
+	"category" : "Audi",
+	"choices" : [{
+		  "title": "July Horch",
+		  "no" : "a" 
+		},
+		{
+		   "title": "March Horch",
+		   "no" : "b" 
+		},
+		{
+		    "title": "August Horch",
+		    "no" : "c" 
+		},
+		{
+		     "title": "December Horch",
+		     "no" : "d" 
+		}]
+	},
+	
+	{
+	"qns":"What is the first model of Audi?",
+	"no" : "2",
+	"correctAns": "a",
+	"points" : "2",
+	"category" : "Audi",
+	"choices" : [{
+		  "title": "Audi Type A",
+		  "no" : "a" 
+		},
+		{
+		   "title": "Audi Model 1",
+		   "no" : "b" 
+		},
+		{
+		    "title": "Audi First",
+		    "no" : "c" 
+		},
+		{
+		     "title": "Audi A1",
+		     "no" : "d" 
+		}]
+	},
+	
+	{
+	"qns":"How many circles does the Audi logo have?",
+	"no" : "3",
+	"correctAns": "d",
+	"points" : "2",
+	"category" : "Audi",
+	"choices" : [{
+		  "title": "1",
+		  "no" : "a" 
+		},
+		{
+		   "title": "2",
+		   "no" : "b" 
+		},
+		{
+		    "title": "3",
+		    "no" : "c" 
+		},
+		{
+		     "title": "4",
+		     "no" : "d" 
+		}]
+	},
+	
+	{
+	"qns":"How do you spell BMW?",
+	"no" : "1",
+	"correctAns": "a",
+	"points" : "2",
+	"category" : "BMW",
+	"choices" : [{
+		  "title": "BMW",
+		  "no" : "a" 
+		},
+		{
+		   "title": "BMY",
+		   "no" : "b" 
+		},
+		{
+		    "title": "BEE M DOUBLE U",
+		    "no" : "c" 
+		},
+		{
+		     "title": "Ferrari",
+		     "no" : "d" 
+		}]
+	},
+	
+	{
+	"qns":"What is the full form of BMW?",
+	"no" : "2",
+	"correctAns": "c",
+	"points" : "2",
+	"category" : "BMW",
+	"choices" : [{
+		  "title": "Boys Making Water",
+		  "no" : "a" 
+		},
+		{
+		   "title": "Bayerische Motor Werke GmbH",
+		   "no" : "b" 
+		},
+		{
+		    "title": "Bayerische Motoren Werke GmbH",
+		    "no" : "c" 
+		},
+		{
+		     "title": "Beyblade Motor Wheel",
+		     "no" : "d" 
+		}]
+	},
+	
+	{
+	"qns":"Why did the founder named it BMW?",
+	"no" : "3",
+	"correctAns": "b",
+	"points" : "2",
+	"category" : "BMW",
+	"choices" : [{
+		  "title": "He saw a bee on a motor's wheel",
+		  "no" : "a" 
+		},
+		{
+		   "title": "It indicates their original product range",
+		   "no" : "b" 
+		},
+		{
+		    "title": "He wants it to be BMW",
+		    "no" : "c" 
+		},
+		{
+		     "title": "He asked his children and they chose BMW",
 		     "no" : "d" 
 		}]
 	},
@@ -131,7 +351,9 @@ function makeCarBoxesDroppable(brand) {
 						$dragBox.css(removeMarginStyle);
 						count--;
 						$dragBox.addClass('selected');
+						
 						currentClient = $dragBox;
+						selectedCategory = brand;
 						next_qns();
 						var dialogOption = { scrolling: 'no' };
 						$.fancybox.open('#mcq',dialogOption);
@@ -289,8 +511,16 @@ function hideAllPages() {
 }
 
 function next_qns() {
-	if(qnsIndex < questions.length) {
-		var current = questions[qnsIndex];
+	var filteredQns = [];
+	for(var i=0;i<questions.length;i++) {
+		var question = questions[i];
+		if(question.category==selectedCategory) {
+			filteredQns.push(question);
+		}
+	}
+	
+	if(qnsIndex < filteredQns.length) {
+		var current = filteredQns[qnsIndex];
 		var questionTitle = $("#questionTitle");
 		questionTitle.html((qnsIndex+1) + ". " + current.qns);
 
@@ -317,57 +547,58 @@ function next_qns() {
 		qnsIndex++;
 	}
 	else {
+		var questionPanel = $("#question-panel");
+		questionPanel.css("display","none");
+		
+		var resultPanel = $("#result-panel");
+		resultPanel.css("display","block");
+		
 		qnsIndex = 0;
+		
 		var totalScore = 0;
+		var result = "";
 		
 		for(var i=0;i<selections.length;i++) {
 			var selection = selections[i];
 			var question = null;
-			for(var h=0;h<questions.length;h++) {
-				var q = questions[h];
+			
+			for(var h=0;h<filteredQns.length;h++) {
+				var q = filteredQns[h];
 				if(q.no == selection.qnsNo) {
 					question = q;
 					break;
 				}
 			}
-			
 			if(selection.selected == question.correctAns) {
 				totalScore += parseInt(question.points);
 			}
 		}
 		
+		
 		var totalMarks = 0;
-		for(var h=0;h<questions.length;h++) {
+		for(var h=0;h<filteredQns.length;h++) {
 			var q = questions[h];
-			totalMarks += parseInt(question.points);
+			totalMarks += parseInt(q.points);
 		}
-		
-		var percScore = (totalScore / totalMarks) * 100;
-		var failed = true;
-		
-		if(percScore > 50) {
-			failed = false;
-		}
-		
-		var resultPanel = $("#result-panel");
-		resultPanel.css("display","block");
-		
-		var questionPanel = $("#question-panel");
-		questionPanel.css("display","none");
 		
 		var scoreBox = $("#totalScore");
 		scoreBox.html("Score: " + totalScore + "/" + totalMarks);
 		
-		var result = "";
-		if(failed == true){
-			result = "<img src='images/tenor.gif' width='250px' height='200px' alt='Failed'/>";
+		var percScore = (totalScore / totalMarks) * 100;
+		var failed = true;
+		
+		if(percScore < 50) {
+			result = '<img src="images/tenor.gif" width="250" height="200" alt="ex"/>';
 		}
 		else {
-			result = "<img src='images/excellent.png' width='250px' height='200px' alt='Failed'/>";
+			result = '<img src="images/excellent.png" width="250" height="200" alt="ex"/>';
+			failed = false;
 		}
-		var myresult = $("#myresult");
-		myresult.html(result);
 		
+		var myresult = $("#myresult");
+		myresult.css("display","block");
+		myresult.html(result);
+
 		var closeResultButton = $("#closeResultButton");
 		closeResultButton.click(function() {
 			$.fancybox.close();
