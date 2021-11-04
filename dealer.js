@@ -540,10 +540,10 @@ function next_qns() {
 		var optD_Box = $("#optionD");
 		optD_Box.html(optD.title);
 
-		optA_Box.css("background-color","palegreen");
-		optB_Box.css("background-color","palegreen");
-		optC_Box.css("background-color","palegreen");
-		optD_Box.css("background-color","palegreen");
+		optA_Box.css("background-color","#fe6f27");
+		optB_Box.css("background-color","#fe6f27");
+		optC_Box.css("background-color","#fe6f27");
+		optD_Box.css("background-color","#fe6f27");
 		qnsIndex++;
 	}
 	else {
@@ -588,10 +588,12 @@ function next_qns() {
 		var failed = true;
 		
 		if(percScore < 50) {
-			result = '<img src="images/tenor.gif" width="250" height="200" alt="ex"/>';
+			result = '<img src="images/failed.gif" width="250" height="200" alt="ex"/>' +
+					 '<audio src="audios/failed.mp3" autoplay></audio>';
 		}
 		else {
-			result = '<img src="images/excellent.png" width="250" height="200" alt="ex"/>';
+			result = '<img src="images/passed.gif" width="250" height="200" alt="ex"/>' +
+					 '<audio src="audios/passed.mp3" autoplay></audio>';
 			failed = false;
 		}
 		
@@ -655,10 +657,10 @@ function ansBox_click(selectedChoice) {
 	var optB_Box = $("#optionB");
 	var optC_Box = $("#optionC");
 	var optD_Box = $("#optionD");
-	optA_Box.css("background-color","palegreen");
-	optB_Box.css("background-color","palegreen");
-	optC_Box.css("background-color","palegreen");
-	optD_Box.css("background-color","palegreen");
+	optA_Box.css("background-color","#fe6f27");
+	optB_Box.css("background-color","#fe6f27");
+	optC_Box.css("background-color","#fe6f27");
+	optD_Box.css("background-color","#fe6f27");
 	if(selectedChoice == "a") {
 		optA_Box.css("background-color","khaki");
 	}
